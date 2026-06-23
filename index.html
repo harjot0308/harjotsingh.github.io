@@ -1,29 +1,377 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Harjot Singh Portfolio</title>
-<meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harjot Singh | IT Support Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)),
+        url("images/cover.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero {
+      max-width: 900px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 26px;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 24px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #38bdf8;
+      color: #020617;
+      transform: translateY(-4px);
+      box-shadow: 0 0 25px #38bdf8;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 16px;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 25px;
+    }
+
+    h2.section-title {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .about, .education {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.08);
+      animation: fadeUp 1s ease;
+    }
+
+    .skills-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      padding: 25px;
+      border-radius: 18px;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.08);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #38bdf8;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+    }
+
+    .card h3 {
+      color: #38bdf8;
+      margin-bottom: 12px;
+    }
+
+    .card p, .card li {
+      color: #cbd5e1;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .contact {
+      text-align: center;
+      background: #0f172a;
+      border-radius: 18px;
+      border: 1px solid #1e293b;
+      padding: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Harjot Singh</h1>
+  <header>
+    <div class="hero">
+      <h1>Harjot Singh</h1>
+      <h2>IT Support | Desktop Support | Help Desk</h2>
+      <p>
+        Aspiring IT Support professional with hands-on experience in Windows systems,
+        networking, Active Directory, BitLocker, troubleshooting, and user support.
+      </p>
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </header>
 
-<h2>IT Support | Desktop Support</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<p>
-Graduated with Honors in Information Technology.
-Passionate about troubleshooting, networking,
-Windows administration, and IT support.
-</p>
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about">
+      <p>
+        My name is Harjot Singh, and I am an aspiring IT Support and Desktop Support
+        professional based in Edmonton, Alberta. I recently graduated with Honors in
+        Information Technology, where I developed a strong foundation in computer systems,
+        networking, troubleshooting, and technical support.
+      </p>
+      <br>
+      <p>
+        Through hands-on labs, projects, and coursework, I have gained experience supporting
+        Windows environments, diagnosing technical issues, managing users, and documenting
+        solutions. I am currently continuing to build my skills in Windows 11 deployment,
+        Active Directory, networking, security, and system administration.
+      </p>
+    </div>
+  </section>
 
-<h2>Projects</h2>
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
 
-<ul>
-<li>Windows 10 Home Lab</li>
-<li>Windows Server & Active Directory Lab</li>
-<li>BitLocker Security Lab</li>
-</ul>
+    <div class="skills-grid">
+      <div class="card">
+        <h3>Operating Systems</h3>
+        <ul>
+          <li>Windows 10</li>
+          <li>Windows 11</li>
+          <li>Windows Server</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Networking</h3>
+        <ul>
+          <li>TCP/IP</li>
+          <li>DNS & DHCP</li>
+          <li>NAT</li>
+          <li>Subnetting</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>System Administration</h3>
+        <ul>
+          <li>Active Directory</li>
+          <li>User Management</li>
+          <li>Group Policy</li>
+          <li>Domain Services</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Support Tools</h3>
+        <ul>
+          <li>Command Prompt</li>
+          <li>PowerShell Basics</li>
+          <li>Task Manager</li>
+          <li>Device Manager</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Security</h3>
+        <ul>
+          <li>BitLocker</li>
+          <li>Recovery Keys</li>
+          <li>Windows Security</li>
+          <li>Encryption Basics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>User Support</h3>
+        <ul>
+          <li>Troubleshooting</li>
+          <li>Hardware Setup</li>
+          <li>Documentation</li>
+          <li>Customer Service</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects & Labs</h2>
+
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Windows 10 Home Lab</h3>
+        <p>
+          Built a Windows 10 virtual lab using VMware to practice user account setup,
+          networking commands, troubleshooting, and system configuration.
+        </p>
+        <a href="project1.html" class="project-link">View Project →</a>
+      </div>
+
+      <div class="card">
+        <h3>Windows Server & Active Directory Lab</h3>
+        <p>
+          Configured a Windows Server lab environment with Active Directory, domain services,
+          users, groups, OUs, DNS, and client domain joining.
+        </p>
+        <a href="project2.html" class="project-link">View Project →</a>
+      </div>
+
+      <div class="card">
+        <h3>BitLocker Security Lab</h3>
+        <p>
+          Implemented BitLocker drive encryption, configured Group Policy settings,
+          managed recovery keys, and verified encryption with manage-bde.
+        </p>
+        <a href="project3.html" class="project-link">View Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="education">
+      <h3>Information Technology</h3>
+      <p>Graduated with Honors</p>
+      <br>
+      <p>
+        Relevant areas of study include networking, Windows administration,
+        troubleshooting, technical support, system configuration, and IT documentation.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact">
+      <p>Email: harjot.singh032003@gmail.com</p>
+      <p>LinkedIn: https://www.linkedin.com/in/harjot-singh-110807260/</p>
+      <p>GitHub: https://github.com/harjot0308</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Harjot Singh | IT Support Portfolio</p>
+  </footer>
 
 </body>
 </html>
