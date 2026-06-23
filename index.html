@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +23,9 @@
 
     header {
       min-height: 100vh;
-      background:
-        linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)),
-        url("images/cover.jpg");
-      background-size: cover;
-      background-position: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at top, #0f172a, #020617 70%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -34,15 +33,39 @@
       padding: 40px;
     }
 
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56,189,248,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,0.12) 1px, transparent 1px);
+      background-size: 45px 45px;
+      animation: moveGrid 18s linear infinite;
+    }
+
     .hero {
+      position: relative;
+      z-index: 2;
       max-width: 900px;
       animation: fadeUp 1.2s ease;
     }
 
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #38bdf8;
+      border-radius: 999px;
+      color: #38bdf8;
+      margin-bottom: 20px;
+      background: rgba(56,189,248,0.08);
+    }
+
     .hero h1 {
-      font-size: 60px;
+      font-size: 64px;
       color: white;
       margin-bottom: 15px;
+      text-shadow: 0 0 25px rgba(56,189,248,0.5);
     }
 
     .hero h2 {
@@ -106,23 +129,22 @@
       padding: 80px 25px;
     }
 
-    h2.section-title {
+    .section-title {
       font-size: 36px;
       text-align: center;
       margin-bottom: 40px;
       color: white;
     }
 
-    .about, .education {
+    .about, .education, .contact, .project-card {
       background: #0f172a;
       border: 1px solid #1e293b;
       border-radius: 18px;
       padding: 35px;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.08);
-      animation: fadeUp 1s ease;
+      box-shadow: 0 0 30px rgba(56,189,248,0.08);
     }
 
-    .skills-grid, .projects-grid {
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 22px;
@@ -134,46 +156,74 @@
       padding: 25px;
       border-radius: 18px;
       transition: 0.3s;
-      box-shadow: 0 0 20px rgba(37, 99, 235, 0.08);
     }
 
-    .card:hover {
-      transform: translateY(-8px);
+    .card:hover, .project-card:hover {
+      transform: translateY(-6px);
       border-color: #38bdf8;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 30px rgba(56,189,248,0.25);
     }
 
-    .card h3 {
+    .card h3, .project-card h3 {
       color: #38bdf8;
       margin-bottom: 12px;
     }
 
-    .card p, .card li {
+    .project-card {
+      margin-bottom: 35px;
+      transition: 0.3s;
+    }
+
+    .project-card h4 {
+      color: #93c5fd;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    .project-card img {
+      width: 100%;
+      max-width: 850px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 14px;
+      border: 1px solid #1e293b;
+      box-shadow: 0 0 25px rgba(56,189,248,0.18);
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
       color: #cbd5e1;
     }
 
-    .card ul {
-      padding-left: 20px;
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 25px;
     }
 
-    .project-link {
-      display: inline-block;
-      margin-top: 18px;
+    .tech-stack span {
+      background: #020617;
+      border: 1px solid #38bdf8;
       color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
+      padding: 10px 18px;
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(56,189,248,0.15);
     }
 
     .contact {
       text-align: center;
-      background: #0f172a;
-      border-radius: 18px;
-      border: 1px solid #1e293b;
-      padding: 40px;
+    }
+
+    .contact a {
+      color: #38bdf8;
+      text-decoration: none;
     }
 
     footer {
@@ -181,6 +231,15 @@
       padding: 25px;
       border-top: 1px solid #1e293b;
       color: #94a3b8;
+    }
+
+    @keyframes moveGrid {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 45px 45px;
+      }
     }
 
     @keyframes fadeUp {
@@ -196,7 +255,7 @@
 
     @media (max-width: 600px) {
       .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
       }
 
       nav a {
@@ -211,6 +270,7 @@
 
   <header>
     <div class="hero">
+      <p class="badge">IT Support Portfolio</p>
       <h1>Harjot Singh</h1>
       <h2>IT Support | Desktop Support | Help Desk</h2>
       <p>
@@ -312,38 +372,74 @@
         </ul>
       </div>
     </div>
+
+    <div class="tech-stack">
+      <span>Windows 10</span>
+      <span>Windows Server</span>
+      <span>Active Directory</span>
+      <span>BitLocker</span>
+      <span>DNS</span>
+      <span>DHCP</span>
+      <span>VMware</span>
+      <span>TCP/IP</span>
+    </div>
   </section>
 
   <section id="projects">
     <h2 class="section-title">Projects & Labs</h2>
 
-    <div class="projects-grid">
-      <div class="card">
-        <h3>Windows 10 Home Lab</h3>
-        <p>
-          Built a Windows 10 virtual lab using VMware to practice user account setup,
-          networking commands, troubleshooting, and system configuration.
-        </p>
-        <a href="project1.html" class="project-link">View Project →</a>
-      </div>
+    <div class="project-card">
+      <h3>Project 1 – Windows 10 Home Lab Setup</h3>
 
-      <div class="card">
-        <h3>Windows Server & Active Directory Lab</h3>
-        <p>
-          Configured a Windows Server lab environment with Active Directory, domain services,
-          users, groups, OUs, DNS, and client domain joining.
-        </p>
-        <a href="project2.html" class="project-link">View Project →</a>
-      </div>
+      <p>
+        Built a Windows 10 virtual lab using VMware Workstation Pro to develop hands-on
+        IT Support and Help Desk skills in a safe testing environment. The lab was used
+        to practice system configuration, user management, networking, and troubleshooting
+        tasks commonly performed by IT Support professionals.
+      </p>
 
-      <div class="card">
-        <h3>BitLocker Security Lab</h3>
-        <p>
-          Implemented BitLocker drive encryption, configured Group Policy settings,
-          managed recovery keys, and verified encryption with manage-bde.
-        </p>
-        <a href="project3.html" class="project-link">View Project →</a>
-      </div>
+      <img src="images/multiple-users.png" alt="Multiple Windows user accounts">
+
+      <h4>Technologies Used</h4>
+      <ul>
+        <li>VMware Workstation Pro</li>
+        <li>Windows 10</li>
+        <li>Command Prompt</li>
+        <li>Networking Utilities</li>
+      </ul>
+
+      <h4>Tasks Completed</h4>
+
+      <p>Installed Windows 10 in a virtual machine.</p>
+      <img src="images/Installing-windows.png" alt="Installing Windows 10">
+
+      <p>Configured local user accounts.</p>
+      <img src="images/before.png" alt="Local user account setup">
+
+      <p>Created additional user profiles.</p>
+      <img src="images/creating-new-user.png" alt="Creating new user profile">
+
+      <p>Used ipconfig to examine IP configuration and tested connectivity using ping.</p>
+      <img src="images/cmd-prompt.png" alt="Command Prompt ipconfig output">
+
+      <p>Performed basic troubleshooting and system setup tasks.</p>
+      <img src="images/running-diagnostic.png" alt="Running Windows diagnostics">
+
+      <h4>Skills Demonstrated</h4>
+      <ul>
+        <li>Windows Administration</li>
+        <li>User Account Management</li>
+        <li>Network Troubleshooting</li>
+        <li>Virtualization</li>
+        <li>IT Support Fundamentals</li>
+        <li>Help Desk Procedures</li>
+      </ul>
+
+      <h4>Outcome</h4>
+      <p>
+        Successfully created and configured a functional Windows 10 lab environment and
+        gained practical experience with common IT support tasks and troubleshooting techniques.
+      </p>
     </div>
   </section>
 
@@ -363,9 +459,9 @@
   <section id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="contact">
-      <p>Email: harjot.singh032003@gmail.com</p>
-      <p>LinkedIn: https://www.linkedin.com/in/harjot-singh-110807260/</p>
-      <p>GitHub: https://github.com/harjot0308</p>
+      <p>Email: <a href="mailto:harjot.singh032003@gmail.com">harjot.singh032003@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/harjot-singh-110807260/" target="_blank">linkedin.com/in/harjot-singh-110807260</a></p>
+      <p>GitHub: <a href="https://github.com/harjot0308" target="_blank">github.com/harjot0308</a></p>
     </div>
   </section>
 
@@ -375,3 +471,4 @@
 
 </body>
 </html>
+```
