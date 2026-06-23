@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -232,6 +231,72 @@
       border-top: 1px solid #1e293b;
       color: #94a3b8;
     }
+    .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.tech-stack span {
+  position: relative;
+  background: #0f172a;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tech-stack span:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow:
+    0 0 10px #38bdf8,
+    0 0 25px rgba(56, 189, 248, 0.5);
+  background: #38bdf8;
+  color: #020617;
+}
+
+.tech-stack span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.tech-stack span:hover::before {
+  left: 150%;
+}
+
+    .tech-stack span::after {
+  content: attr(data-skill);
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+.tech-stack span:hover::after {
+  opacity: 1;
+  bottom: -35px;
+}
 
     @keyframes moveGrid {
       from {
@@ -374,15 +439,15 @@
     </div>
 
     <div class="tech-stack">
-      <span>Windows 10</span>
-      <span>Windows Server</span>
-      <span>Active Directory</span>
-      <span>BitLocker</span>
-      <span>DNS</span>
-      <span>DHCP</span>
-      <span>VMware</span>
-      <span>TCP/IP</span>
-    </div>
+  <span data-skill="Operating System Administration">Windows 10</span>
+  <span data-skill="Server Management">Windows Server</span>
+  <span data-skill="User & Group Management">Active Directory</span>
+  <span data-skill="Drive Encryption">BitLocker</span>
+  <span data-skill="Name Resolution">DNS</span>
+  <span data-skill="IP Address Assignment">DHCP</span>
+  <span data-skill="Virtualization Platform">VMware</span>
+  <span data-skill="Network Communication">TCP/IP</span>
+</div>
   </section>
 
   <section id="projects">
@@ -410,19 +475,19 @@
 
       <h4>Tasks Completed</h4>
 
-      <p>Installed Windows 10 in a virtual machine.</p>
+      <h4>Installed Windows 10 in a virtual machine.</h4>
       <img src="images/Installing-windows.png" alt="Installing Windows 10">
 
-      <p>Configured local user accounts.</p>
+      <h4>Configured local user accounts.</h4>
       <img src="images/before.png" alt="Local user account setup">
 
-      <p>Created additional user profiles.</p>
+      <h4>Created additional user profiles.</h4>
       <img src="images/creating-new-user.png" alt="Creating new user profile">
 
-      <p>Used ipconfig to examine IP configuration and tested connectivity using ping.</p>
+      <h4>Used ipconfig to examine IP configuration and tested connectivity using ping.</h4>
       <img src="images/cmd-prompt.png" alt="Command Prompt ipconfig output">
 
-      <p>Performed basic troubleshooting and system setup tasks.</p>
+      <h4>Performed basic troubleshooting and system setup tasks.</h4>
       <img src="images/running-diagnostic.png" alt="Running Windows diagnostics">
 
       <h4>Skills Demonstrated</h4>
