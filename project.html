@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | Harjot Singh</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+}
+
+header{
+  min-height:50vh;
+  background:radial-gradient(circle at top,#0f172a,#020617 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px;
+}
+
+.hero{
+  max-width:800px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 16px;
+  border:1px solid #38bdf8;
+  border-radius:999px;
+  color:#38bdf8;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:60px;
+  color:white;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#cbd5e1;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  border-radius:999px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#38bdf8;
+  color:#020617;
+}
+
+.projects-container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:30px;
+}
+
+.project-card{
+  background:#0f172a;
+  border:1px solid #1e293b;
+  border-radius:18px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.project-card:hover{
+  transform:translateY(-8px);
+  border-color:#38bdf8;
+  box-shadow:0 0 30px rgba(56,189,248,.25);
+}
+
+.project-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.project-content{
+  padding:25px;
+}
+
+.project-content h2{
+  color:#38bdf8;
+  margin-bottom:15px;
+}
+
+.project-content p{
+  color:#cbd5e1;
+  margin-bottom:20px;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  border-top:1px solid #1e293b;
+  color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="hero">
+
+<p class="badge">Portfolio Projects</p>
+
+<h1>Projects & Labs</h1>
+
+<p>
+Hands-on IT Support, Security, Networking,
+Windows Administration, and Troubleshooting projects.
+</p>
+
+<a href="index.html" class="btn">
+Back To Home
+</a>
+
+</div>
+
+</header>
+
+<section class="projects-container">
+
+<div class="project-card">
+
+<img src="images/multiple-users.png">
+
+<div class="project-content">
+
+<h2>Windows 10 Home Lab Setup</h2>
+
+<p>
+Built a Windows 10 virtual environment using VMware Workstation Pro
+to practice user administration, networking, and troubleshooting.
+</p>
+
+<a href="project1.html" class="btn">
+View Project
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="images/Screenshot-2026-04-28-201500.png">
+
+<div class="project-content">
+
+<h2>BitLocker Security & Encryption Lab</h2>
+
+<p>
+Implemented BitLocker encryption, recovery key management,
+and Group Policy configuration.
+</p>
+
+<a href="project2.html" class="btn">
+View Project
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Harjot Singh | IT Support Portfolio</p>
+</footer>
+
+</body>
+</html>
